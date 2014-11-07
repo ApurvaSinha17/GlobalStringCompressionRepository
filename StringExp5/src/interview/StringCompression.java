@@ -39,7 +39,6 @@ public class StringCompression {
 			}
 		}
 		
-		Boolean flag = false;
 		StringBuilder strBuilder = new StringBuilder();
 		Iterator iter = charMap.entrySet().iterator();
 		while(iter.hasNext()){
@@ -48,12 +47,10 @@ public class StringCompression {
 			strBuilder.append(alphabet);
 			int value = entry.getValue();
 			strBuilder.append(value);
-			if(value>1)
-				flag = true;
 		}
 		
 		String compressedString  = strBuilder.toString();
-		if(!flag || compressedString.length()>=str.length())
+		if(compressedString.length()>=str.length())
 			return str;
 		else
 			return compressedString;
